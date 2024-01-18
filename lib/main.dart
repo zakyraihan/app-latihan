@@ -1,3 +1,4 @@
+import 'package:app_latihan/item_table.dart';
 import 'package:app_latihan/table_user.dart';
 import 'package:flutter/material.dart';
 
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const MyHomePage(),
         '/user': (context) => const TableUser(),
+        '/item': (context) => const ItemTable()
       },
     );
   }
@@ -42,6 +44,10 @@ class MyHomePage extends StatelessWidget {
             ElevatedButton(
               onPressed: () => Navigator.pushNamed(context, '/user'),
               child: const Text('Table User'),
+            ),
+            ElevatedButton(
+              onPressed: () => Navigator.pushNamed(context, '/item'),
+              child: const Text('Table item'),
             )
           ],
         ),
