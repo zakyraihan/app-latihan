@@ -1,6 +1,7 @@
 import 'package:app_latihan/page1.dart';
 import 'package:app_latihan/page2.dart';
 import 'package:app_latihan/page3.dart';
+import 'package:app_latihan/table_user.dart';
 import 'package:app_latihan/user.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
         '/': (context) => const MyHomePage(),
         '/page1': (context) => const Page1(),
         '/page2': (context) => const Page2(),
-        '/page3': (context) => const Page3()
+        '/page3': (context) => const Page3(),
+        '/user': (context) => const TableUser(),
       },
     );
   }
@@ -55,6 +57,10 @@ class MyHomePage extends StatelessWidget {
                   );
                 },
                 child: const Text("Next Page 1"),
+              ),
+              ElevatedButton(
+                onPressed: () => Navigator.pushNamed(context, '/user'),
+                child: const Text('Table User'),
               )
             ],
           ),
