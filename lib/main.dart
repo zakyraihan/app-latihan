@@ -1,6 +1,7 @@
 import 'package:app_latihan/page1.dart';
 import 'package:app_latihan/page2.dart';
 import 'package:app_latihan/page3.dart';
+import 'package:app_latihan/user.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -45,7 +46,13 @@ class MyHomePage extends StatelessWidget {
             children: [
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/page1');
+                  Navigator.pushNamed(
+                    context,
+                    '/page1',
+                    arguments:
+                        // User('example@gmail.com', '12345', 12),
+                        Produk('odol pepsodent', 20.000),
+                  );
                 },
                 child: const Text("Next Page 1"),
               )
