@@ -32,19 +32,20 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('HomePage'),
+      appBar: AppBar(
+        title: const Text('HomePage'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () => Navigator.pushNamed(context, '/user'),
+              child: const Text('Table User'),
+            )
+          ],
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                onPressed: () => Navigator.pushNamed(context, '/user'),
-                child: const Text('Table User'),
-              )
-            ],
-          ),
-        ));
+      ),
+    );
   }
 }

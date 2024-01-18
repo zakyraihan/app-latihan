@@ -1,3 +1,4 @@
+import 'package:app_latihan/model/user_model.dart';
 import 'package:flutter/material.dart';
 
 class TableUser extends StatefulWidget {
@@ -30,22 +31,21 @@ class _TableUserState extends State<TableUser> {
                     DataColumn(label: Text('Action')),
                   ],
                   rows: List.generate(
-                    10,
-                    (index) => DataRow(
-                      cells: [
-                        DataCell(Text('${index + 1}')),
-                        const DataCell(Text('Testgmail@.com')),
-                        DataCell(Row(
-                          children: [
-                            IconButton(
-                                onPressed: () {}, icon: const Icon(Icons.edit)),
-                            IconButton(
-                                onPressed: () {},
-                                icon: const Icon(Icons.delete))
-                          ],
-                        ))
-                      ],
-                    ),
+                    dataUser.length,
+                    (index) => DataRow(cells: [
+                      DataCell(Text('${index + 1}')),
+                      DataCell(Text(dataUser[index].email)),
+                      DataCell(Row(children: [
+                        IconButton(
+                          onPressed: () {},
+                          icon: const Icon(Icons.edit),
+                        ),
+                        IconButton(
+                          onPressed: () {},
+                          icon: const Icon(Icons.delete),
+                        )
+                      ]))
+                    ]),
                   ),
                 ),
               )
@@ -53,16 +53,16 @@ class _TableUserState extends State<TableUser> {
           ),
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.green,
         onPressed: () {},
         child: const Icon(Icons.add),
       ),
-      bottomNavigationBar: BottomNavigationBar(items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-        BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),
-      ]),
+      // bottomNavigationBar: BottomNavigationBar(items: const [
+      //   BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+      //   BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),
+      // ]),
     );
   }
 }
