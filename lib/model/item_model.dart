@@ -1,6 +1,6 @@
 class Item {
   String namaItem;
-  double hargaItem;
+  int hargaItem;
   bool status;
 
   Item(this.namaItem, this.hargaItem, this.status);
