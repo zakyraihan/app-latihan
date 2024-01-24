@@ -98,7 +98,6 @@ class _ItemTableState extends State<ItemTable> {
                       onChanged: (value) {
                         setState(() {
                           isActive = value;
-                          print(isActive);
                         });
                       },
                     ),
